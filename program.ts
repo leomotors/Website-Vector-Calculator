@@ -1,7 +1,6 @@
 /**
- * * program.js
- * TODO What to be here is calculation
- * TODO Vector Calculation
+ * * program.(js/ts)
+ * TODO integrate with website
  */
 
 class Vector {
