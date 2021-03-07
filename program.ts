@@ -30,17 +30,23 @@ class Vector {
         let k = this.k - v.k
         return new Vector(i, j, k)
     }
+    multiple(x: number) {
+        let i = this.i * x
+        let j = this.j * x
+        let k = this.k * x
+        return new Vector(i,j,k)
+    }
     dotProduct(v: Vector) {
         let i = this.i * v.i
         let j = this.j * v.j
         let k = this.k * v.k
         return i + j + k
     }
-    crossProduct(v:Vector) {
-        let i = this.j*v.k - this.k*v.j
-        let j = this.k*v.i - this.i*v.k
-        let k = this.i*v.j - this.j*v.i
-        return new Vector(i,j,k)
+    crossProduct(v: Vector) {
+        let i = this.j * v.k - this.k * v.j
+        let j = this.k * v.i - this.i * v.k
+        let k = this.i * v.j - this.j * v.i
+        return new Vector(i, j, k)
     }
 }
 
@@ -51,3 +57,4 @@ let c = a.add(b)
 console.log(c.size())
 console.log(a.dotProduct(b))
 console.log(a.crossProduct(b))
+console.log(a.multiple(5))
