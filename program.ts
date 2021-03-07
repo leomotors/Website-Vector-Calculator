@@ -59,7 +59,9 @@ class Vector {
 }
 
 // ! Below is not program feature, test purpose only!
-let a = new Vector(3, 4, 5)
-console.log(a.size())
-let b = new Vector(7, 8, 9)
-console.log(a.parrallelogramArea(b))
+let a:number = parseInt(prompt("Gimme i"))
+let b:number = parseInt(prompt("Gimme j"))
+let c:number = parseInt(prompt("Gimme k"))
+let u = new Vector(a,b,c)
+
+alert(u.size())
