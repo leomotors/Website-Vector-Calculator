@@ -18,43 +18,49 @@ class Vector {
         let result = this.i * this.i + this.j * this.j + this.k * this.k
         return Math.sqrt(result)
     }
-    add(v: Vector) {
-        let i = this.i + v.i
-        let j = this.j + v.j
-        let k = this.k + v.k
+    add(op: Vector) {
+        let i = this.i + op.i
+        let j = this.j + op.j
+        let k = this.k + op.k
         return new Vector(i, j, k)
     }
-    subtract(v: Vector) {
-        let i = this.i - v.i
-        let j = this.j - v.j
-        let k = this.k - v.k
+    subtract(op: Vector) {
+        let i = this.i - op.i
+        let j = this.j - op.j
+        let k = this.k - op.k
         return new Vector(i, j, k)
     }
-    multiple(x: number) {
-        let i = this.i * x
-        let j = this.j * x
-        let k = this.k * x
-        return new Vector(i,j,k)
+    multiply(multiplicand: number) {
+        let i = this.i * multiplicand
+        let j = this.j * multiplicand
+        let k = this.k * multiplicand
+        return new Vector(i, j, k)
     }
-    dotProduct(v: Vector) {
-        let i = this.i * v.i
-        let j = this.j * v.j
-        let k = this.k * v.k
+    dotProduct(op: Vector) {
+        let i = this.i * op.i
+        let j = this.j * op.j
+        let k = this.k * op.k
         return i + j + k
     }
-    crossProduct(v: Vector) {
-        let i = this.j * v.k - this.k * v.j
-        let j = this.k * v.i - this.i * v.k
-        let k = this.i * v.j - this.j * v.i
+    crossProduct(op: Vector) {
+        let i = this.j * op.k - this.k * op.j
+        let j = this.k * op.i - this.i * op.k
+        let k = this.i * op.j - this.j * op.i
         return new Vector(i, j, k)
+    }
+    projectOn(op: Vector) {
+        let OneUnitVector = this.dotProduct(op) / (op.size() * op.size())
+        let w = op.multiply(OneUnitVector)
+        return w
+    }
+    parrallelogramArea(op: Vector)
+    {
+        return this.crossProduct(op).size()
     }
 }
 
+// ! Below is not program feature, test purpose only!
 let a = new Vector(3, 4, 5)
 console.log(a.size())
 let b = new Vector(7, 8, 9)
-let c = a.add(b)
-console.log(c.size())
-console.log(a.dotProduct(b))
-console.log(a.crossProduct(b))
-console.log(a.multiple(5))
+console.log(a.parrallelogramArea(b))
