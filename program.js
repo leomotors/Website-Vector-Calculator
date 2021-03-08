@@ -5,7 +5,7 @@
 // TODO Add feature to set this value, if possible, support cookie
 var decimalPlaces = 2;
 function TurnOnWeeb() {
-    var abrvString = "url(\"/assets/イレイナとชานมไข่มุก.jpg\")";
+    var abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")";
     document.getElementById("Body").style.backgroundImage = abrvString;
 }
 var Vector = /** @class */ (function () {

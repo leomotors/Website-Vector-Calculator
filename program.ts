@@ -7,7 +7,7 @@
 var decimalPlaces = 2
 
 function TurnOnWeeb() {
-    let abrvString = "url(\"/assets/イレイナとชานมไข่มุก.jpg\")"
+    let abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")"
     document.getElementById("Body").style.backgroundImage = abrvString
 }
 class Vector {
