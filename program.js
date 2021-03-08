@@ -4,10 +4,6 @@
  */
 // TODO Add feature to set this value, if possible, support cookie
 var decimalPlaces = 2;
-function TurnOnWeeb() {
-    var abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")";
-    document.getElementById("Body").style.backgroundImage = abrvString;
-}
 var Vector = /** @class */ (function () {
     function Vector(i, j, k) {
         this.i = i;
@@ -123,4 +119,12 @@ function Operation(choice) {
             ResultTxt = "Unknown Choice, not implemented yet.";
     }
     document.getElementById("ResultTxt").innerHTML = ResultTxt;
+}
+function TurnOnWeeb() {
+    var abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")";
+    document.getElementById("Body").style.backgroundImage = abrvString;
+}
+function GoHuaHin() {
+    var abrvString = "url(\"./assets/HuaHin Luxury Resort View.jpg\")";
+    document.getElementById("Body").style.backgroundImage = abrvString;
 }

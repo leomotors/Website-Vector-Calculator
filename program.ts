@@ -6,10 +6,6 @@
 // TODO Add feature to set this value, if possible, support cookie
 var decimalPlaces = 2
 
-function TurnOnWeeb() {
-    let abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")"
-    document.getElementById("Body").style.backgroundImage = abrvString
-}
 class Vector {
     i: number
     j: number
@@ -134,4 +130,16 @@ function Operation(choice: number): void {
             ResultTxt = "Unknown Choice, not implemented yet."
     }
     document.getElementById("ResultTxt").innerHTML = ResultTxt
+}
+
+
+function TurnOnWeeb() {
+    let abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")"
+    document.getElementById("Body").style.backgroundImage = abrvString
+}
+
+function GoHuaHin()
+{
+    let abrvString = "url(\"./assets/HuaHin Luxury Resort View.jpg\")"
+    document.getElementById("Body").style.backgroundImage = abrvString
 }
