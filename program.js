@@ -84,7 +84,7 @@ function Operation(choice) {
     switch (choice) {
         // * One Vector Operation
         case 1:
-            ResultTxt = "Result is " + inputVector(1).size() + " unit(s).";
+            ResultTxt = "Result is " + inputVector(1).size().toFixed(decimalPlaces) + " unit(s).";
             break;
         // TODO Case 2 : Multiply
         // * Two Vector Operation

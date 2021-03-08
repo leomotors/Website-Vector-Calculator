@@ -32,3 +32,8 @@ input{
 button{
     align-content: center;
 }
+
+#ResultTxt{
+    font-size: 200%;
+    font-weight: 600;
+}
