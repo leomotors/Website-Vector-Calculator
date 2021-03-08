@@ -17,46 +17,46 @@ class Vector {
     }
 
     // * Class Method (Vector Calculation)
-    size() {
+    size(): number {
         let result = this.i * this.i + this.j * this.j + this.k * this.k
         return Math.sqrt(result)
     }
-    multiply(multiplicand: number) {
+    multiply(multiplicand: number): Vector {
         let i = this.i * multiplicand
         let j = this.j * multiplicand
         let k = this.k * multiplicand
         return new Vector(i, j, k)
     }
-    add(op: Vector) {
+    add(op: Vector): Vector {
         let i = this.i + op.i
         let j = this.j + op.j
         let k = this.k + op.k
         return new Vector(i, j, k)
     }
-    subtract(op: Vector) {
+    subtract(op: Vector): Vector {
         let i = this.i - op.i
         let j = this.j - op.j
         let k = this.k - op.k
         return new Vector(i, j, k)
     }
-    dotProduct(op: Vector) {
+    dotProduct(op: Vector): number {
         let i = this.i * op.i
         let j = this.j * op.j
         let k = this.k * op.k
         return i + j + k
     }
-    crossProduct(op: Vector) {
+    crossProduct(op: Vector): Vector {
         let i = this.j * op.k - this.k * op.j
         let j = this.k * op.i - this.i * op.k
         let k = this.i * op.j - this.j * op.i
         return new Vector(i, j, k)
     }
-    projectOn(op: Vector) {
+    projectOn(op: Vector): Vector {
         let projectedVectorRelSize = this.dotProduct(op) / (op.size() * op.size())
         let w = op.multiply(projectedVectorRelSize)
         return w
     }
-    parallelogramArea(op: Vector) {
+    parallelogramArea(op: Vector): number {
         return this.crossProduct(op).size()
     }
     formattedPrint(): String {
@@ -68,7 +68,7 @@ class Vector {
 }
 
 function inputVector(VectorID: number = 1): Vector {
-    let i:any, j:any, k:any
+    let i: any, j: any, k: any
 
     if (VectorID == 1) {
         i = (<HTMLInputElement>document.getElementById("vector-i")).value
@@ -87,9 +87,9 @@ function inputVector(VectorID: number = 1): Vector {
     return new Vector(i, j, k)
 }
 
-function Operation(choice: number) {
+function Operation(choice: number): void {
     let ResultTxt = ""
-    let ResultVector:Vector = null
+    let ResultVector: Vector = null
     switch (choice) {
         // * One Vector Operation
         case 1: ResultTxt = `Result is ${inputVector(1).size().toFixed(decimalPlaces)} unit(s).`
