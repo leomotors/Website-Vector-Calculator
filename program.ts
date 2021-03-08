@@ -13,6 +13,8 @@ class Vector {
         this.j = j
         this.k = k
     }
+
+    // * Class Method (Vector Calculation)
     size() {
         let result = this.i * this.i + this.j * this.j + this.k * this.k
         return Math.sqrt(result)
@@ -48,8 +50,8 @@ class Vector {
         return new Vector(i, j, k)
     }
     projectOn(op: Vector) {
-        let OneUnitVector = this.dotProduct(op) / (op.size() * op.size())
-        let w = op.multiply(OneUnitVector)
+        let projectedVectorRelSize = this.dotProduct(op) / (op.size() * op.size())
+        let w = op.multiply(projectedVectorRelSize)
         return w
     }
     parrallelogramArea(op: Vector) {
@@ -57,7 +59,7 @@ class Vector {
     }
 }
 
-function formattedPrint(u: Vector , decimalPlaces:number = 2): String {
+function formattedPrint(u: Vector, decimalPlaces: number = 2): String {
     let i = u.i.toFixed(decimalPlaces)
     let j = u.j.toFixed(decimalPlaces)
     let k = u.k.toFixed(decimalPlaces)
@@ -72,5 +74,5 @@ let d: number = parseInt(prompt("Gimme i"))
 let e: number = parseInt(prompt("Gimme j"))
 let f: number = parseInt(prompt("Gimme k"))
 let u = new Vector(a, b, c)
-let v = new Vector(d,e,f)
+let v = new Vector(d, e, f)
 alert(`Cross Vec Result is ${formattedPrint(u.crossProduct(v))}`)

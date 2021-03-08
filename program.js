@@ -8,6 +8,7 @@ var Vector = /** @class */ (function () {
         this.j = j;
         this.k = k;
     }
+    // * Class Method (Vector Calculation)
     Vector.prototype.size = function () {
         var result = this.i * this.i + this.j * this.j + this.k * this.k;
         return Math.sqrt(result);
@@ -43,8 +44,8 @@ var Vector = /** @class */ (function () {
         return new Vector(i, j, k);
     };
     Vector.prototype.projectOn = function (op) {
-        var OneUnitVector = this.dotProduct(op) / (op.size() * op.size());
-        var w = op.multiply(OneUnitVector);
+        var projectedVectorRelSize = this.dotProduct(op) / (op.size() * op.size());
+        var w = op.multiply(projectedVectorRelSize);
         return w;
     };
     Vector.prototype.parrallelogramArea = function (op) {
