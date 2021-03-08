@@ -1,0 +1,11 @@
+#logo{
+    align-self:"center";
+    color:darkgoldenrod;
+}
+
+body {
+    background-image: url("イレイナとชานมไข่มุก.jpg");
+    font-family: "System Font","PrintAble4U","Consolas";
+    align-content:center;
+    align-self:center;
+}
