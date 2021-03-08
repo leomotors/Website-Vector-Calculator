@@ -2,6 +2,7 @@
  * * program.(js/ts)
  * TODO integrate with website
  */
+var decimalPlaces = 2;
 var Vector = /** @class */ (function () {
     function Vector(i, j, k) {
         this.i = i;
@@ -51,8 +52,7 @@ var Vector = /** @class */ (function () {
     Vector.prototype.parallelogramArea = function (op) {
         return this.crossProduct(op).size();
     };
-    Vector.prototype.formattedPrint = function (decimalPlaces) {
-        if (decimalPlaces === void 0) { decimalPlaces = 2; }
+    Vector.prototype.formattedPrint = function () {
         var i = this.i.toFixed(decimalPlaces);
         var j = this.j.toFixed(decimalPlaces);
         var k = this.k.toFixed(decimalPlaces);
@@ -80,20 +80,36 @@ function inputVector(VectorID) {
 }
 function Operation(choice) {
     var ResultTxt = "";
+    var ResultVector = null;
     switch (choice) {
+        // * One Vector Operation
         case 1:
             ResultTxt = "Result is " + inputVector(1).size() + " unit(s).";
             break;
         // TODO Case 2 : Multiply
-        // TODO Case 3 : Add
-        // TODO Case 4 : Subtract
-        // TODO Case 5 : Dot Product
-        // TODO Case 6 : Cross Product
-        case 6:
-            var ResultVector = inputVector(1).crossProduct(inputVector(2));
+        // * Two Vector Operation
+        case 3:
+            ResultVector = inputVector(1).add(inputVector(2));
             ResultTxt = "Result is " + ResultVector.formattedPrint();
-        // TODO Case 7 : Project Vector on another
-        // TODO Case 8 : Parallelogram Area
+            break;
+        case 4:
+            ResultVector = inputVector(1).subtract(inputVector(2));
+            ResultTxt = "Result is " + ResultVector.formattedPrint();
+            break;
+        case 5:
+            ResultTxt = "Result is " + inputVector(1).dotProduct(inputVector(2)).toFixed(decimalPlaces);
+            break;
+        case 6:
+            ResultVector = inputVector(1).crossProduct(inputVector(2));
+            ResultTxt = "Result is " + ResultVector.formattedPrint();
+            break;
+        case 7:
+            ResultVector = inputVector(1).projectOn(inputVector(2));
+            ResultTxt = "Result is " + ResultVector.formattedPrint();
+            break;
+        case 8:
+            ResultTxt = "Result is " + inputVector(1).parallelogramArea(inputVector(2)).toFixed(decimalPlaces) + " sq.unit.";
+            break;
         default:
             ResultTxt = "Unknown Choice, not implemented yet.";
     }

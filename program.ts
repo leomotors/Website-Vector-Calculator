@@ -3,6 +3,8 @@
  * TODO integrate with website
  */
 
+var decimalPlaces = 2
+
 class Vector {
     i: number
     j: number
@@ -57,7 +59,7 @@ class Vector {
     parallelogramArea(op: Vector) {
         return this.crossProduct(op).size()
     }
-    formattedPrint(decimalPlaces: number = 2): String {
+    formattedPrint(): String {
         let i = this.i.toFixed(decimalPlaces)
         let j = this.j.toFixed(decimalPlaces)
         let k = this.k.toFixed(decimalPlaces)
@@ -87,18 +89,36 @@ function inputVector(VectorID: number = 1): Vector {
 
 function Operation(choice: number) {
     let ResultTxt = ""
+    let ResultVector:Vector = null
     switch (choice) {
+        // * One Vector Operation
         case 1: ResultTxt = `Result is ${inputVector(1).size()} unit(s).`
             break
         // TODO Case 2 : Multiply
-        // TODO Case 3 : Add
-        // TODO Case 4 : Subtract
-        // TODO Case 5 : Dot Product
-        case 6:
-            let ResultVector = inputVector(1).crossProduct(inputVector(2))
+
+        // * Two Vector Operation
+        case 3:
+            ResultVector = inputVector(1).add(inputVector(2))
             ResultTxt = `Result is ${ResultVector.formattedPrint()}`
-        // TODO Case 7 : Project Vector on another
-        // TODO Case 8 : Parallelogram Area
+            break
+        case 4:
+            ResultVector = inputVector(1).subtract(inputVector(2))
+            ResultTxt = `Result is ${ResultVector.formattedPrint()}`
+            break
+        case 5:
+            ResultTxt = `Result is ${inputVector(1).dotProduct(inputVector(2)).toFixed(decimalPlaces)}`
+            break
+        case 6:
+            ResultVector = inputVector(1).crossProduct(inputVector(2))
+            ResultTxt = `Result is ${ResultVector.formattedPrint()}`
+            break
+        case 7:
+            ResultVector = inputVector(1).projectOn(inputVector(2))
+            ResultTxt = `Result is ${ResultVector.formattedPrint()}`
+            break
+        case 8:
+            ResultTxt = `Result is ${inputVector(1).parallelogramArea(inputVector(2)).toFixed(decimalPlaces)} sq.unit.`
+            break
         default:
             ResultTxt = "Unknown Choice, not implemented yet."
     }
