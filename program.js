@@ -13,6 +13,12 @@ var Vector = /** @class */ (function () {
         var result = this.i * this.i + this.j * this.j + this.k * this.k;
         return Math.sqrt(result);
     };
+    Vector.prototype.multiply = function (multiplicand) {
+        var i = this.i * multiplicand;
+        var j = this.j * multiplicand;
+        var k = this.k * multiplicand;
+        return new Vector(i, j, k);
+    };
     Vector.prototype.add = function (op) {
         var i = this.i + op.i;
         var j = this.j + op.j;
@@ -23,12 +29,6 @@ var Vector = /** @class */ (function () {
         var i = this.i - op.i;
         var j = this.j - op.j;
         var k = this.k - op.k;
-        return new Vector(i, j, k);
-    };
-    Vector.prototype.multiply = function (multiplicand) {
-        var i = this.i * multiplicand;
-        var j = this.j * multiplicand;
-        var k = this.k * multiplicand;
         return new Vector(i, j, k);
     };
     Vector.prototype.dotProduct = function (op) {
@@ -48,25 +48,55 @@ var Vector = /** @class */ (function () {
         var w = op.multiply(projectedVectorRelSize);
         return w;
     };
-    Vector.prototype.parrallelogramArea = function (op) {
+    Vector.prototype.parallelogramArea = function (op) {
         return this.crossProduct(op).size();
+    };
+    Vector.prototype.formattedPrint = function (decimalPlaces) {
+        if (decimalPlaces === void 0) { decimalPlaces = 2; }
+        var i = this.i.toFixed(decimalPlaces);
+        var j = this.j.toFixed(decimalPlaces);
+        var k = this.k.toFixed(decimalPlaces);
+        return "( " + i + " , " + j + " , " + k + " )";
     };
     return Vector;
 }());
-function formattedPrint(u, decimalPlaces) {
-    if (decimalPlaces === void 0) { decimalPlaces = 2; }
-    var i = u.i.toFixed(decimalPlaces);
-    var j = u.j.toFixed(decimalPlaces);
-    var k = u.k.toFixed(decimalPlaces);
-    return "( " + i + " , " + j + " , " + k + " )";
+function inputVector(VectorID) {
+    if (VectorID === void 0) { VectorID = 1; }
+    var i, j, k;
+    if (VectorID == 1) {
+        i = document.getElementById("vectori").value;
+        j = document.getElementById("vectorj").value;
+        k = document.getElementById("vectork").value;
+    }
+    else {
+        i = document.getElementById("operandi").value;
+        j = document.getElementById("operandj").value;
+        k = document.getElementById("operandk").value;
+    }
+    i = parseInt(i);
+    j = parseInt(j);
+    k = parseInt(k);
+    return new Vector(i, j, k);
+}
+function Operation(choice) {
+    var ResultTxt = "";
+    switch (choice) {
+        case 1:
+            ResultTxt = "Result is " + inputVector(1).size() + " unit(s).";
+            break;
+        // TODO Case 2 : Multiply
+        // TODO Case 3 : Add
+        // TODO Case 4 : Subtract
+        // TODO Case 5 : Dot Product
+        // TODO Case 6 : Cross Product
+        case 6:
+            var ResultVector = inputVector(1).crossProduct(inputVector(2));
+            ResultTxt = "Result is " + ResultVector.formattedPrint();
+        // TODO Case 7 : Project Vector on another
+        // TODO Case 8 : Parallelogram Area
+        default:
+            ResultTxt = "Unknown Choice, not implemented yet.";
+    }
+    document.getElementById("ResultTxt").innerHTML = ResultTxt;
 }
 // ! Below is not program feature, test purpose only!
-var a = parseInt(prompt("Gimme i"));
-var b = parseInt(prompt("Gimme j"));
-var c = parseInt(prompt("Gimme k"));
-var d = parseInt(prompt("Gimme i"));
-var e = parseInt(prompt("Gimme j"));
-var f = parseInt(prompt("Gimme k"));
-var u = new Vector(a, b, c);
-var v = new Vector(d, e, f);
-alert("Cross Vec Result is " + formattedPrint(u.crossProduct(v)));

@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Vector Calculator (Web Version)</title>
-    </head>
-    <body>
-        <h1 align="center">
-            Vector Calculator
-        </h1>
-        <hr>
-        <script src="program.js"></script>
-    </body>
+
+<head>
+    <title>Vector Calculator (Web Version)</title>
+</head>
+
+<body align="center">
+    <h1 align="center">
+        Vector Calculator
+    </h1>
+    <hr>
+    <div>First Vector: </div>
+    <input id="vectori" type="text" />
+    <input id="vectorj" type="text" />
+    <input id="vectork" type="text" />
+    <br> <br>
+    <h2>One Vector Operation</h2>
+    <button onclick="Operation(1)">Calculate Size</button>
+    <h2>Two Vector Operation</h2>
+    <h3>Operand Vector: </h3>
+    <input id="operandi" type="text" />
+    <input id="operandj" type="text" />
+    <input id="operandk" type="text" />
+    <br> <br>
+    <button onclick="Operation(3)">Cross Vector</button>
+    <p id="ResultTxt"></p>
+    <script src="program.js"></script>
+</body>
+
 </html>

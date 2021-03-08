@@ -19,6 +19,12 @@ class Vector {
         let result = this.i * this.i + this.j * this.j + this.k * this.k
         return Math.sqrt(result)
     }
+    multiply(multiplicand: number) {
+        let i = this.i * multiplicand
+        let j = this.j * multiplicand
+        let k = this.k * multiplicand
+        return new Vector(i, j, k)
+    }
     add(op: Vector) {
         let i = this.i + op.i
         let j = this.j + op.j
@@ -29,12 +35,6 @@ class Vector {
         let i = this.i - op.i
         let j = this.j - op.j
         let k = this.k - op.k
-        return new Vector(i, j, k)
-    }
-    multiply(multiplicand: number) {
-        let i = this.i * multiplicand
-        let j = this.j * multiplicand
-        let k = this.k * multiplicand
         return new Vector(i, j, k)
     }
     dotProduct(op: Vector) {
@@ -54,25 +54,54 @@ class Vector {
         let w = op.multiply(projectedVectorRelSize)
         return w
     }
-    parrallelogramArea(op: Vector) {
+    parallelogramArea(op: Vector) {
         return this.crossProduct(op).size()
+    }
+    formattedPrint(decimalPlaces: number = 2): String {
+        let i = this.i.toFixed(decimalPlaces)
+        let j = this.j.toFixed(decimalPlaces)
+        let k = this.k.toFixed(decimalPlaces)
+        return `( ${i} , ${j} , ${k} )`
     }
 }
 
-function formattedPrint(u: Vector, decimalPlaces: number = 2): String {
-    let i = u.i.toFixed(decimalPlaces)
-    let j = u.j.toFixed(decimalPlaces)
-    let k = u.k.toFixed(decimalPlaces)
-    return `( ${i} , ${j} , ${k} )`
+function inputVector(VectorID: number = 1): Vector {
+    let i:any, j:any, k:any
+
+    if (VectorID == 1) {
+        i = (<HTMLInputElement>document.getElementById("vectori")).value
+        j = (<HTMLInputElement>document.getElementById("vectorj")).value
+        k = (<HTMLInputElement>document.getElementById("vectork")).value
+    }
+    else {
+        i = (<HTMLInputElement>document.getElementById("operandi")).value
+        j = (<HTMLInputElement>document.getElementById("operandj")).value
+        k = (<HTMLInputElement>document.getElementById("operandk")).value
+    }
+
+    i = parseInt(i)
+    j = parseInt(j)
+    k = parseInt(k)
+    return new Vector(i, j, k)
 }
 
+function Operation(choice: number) {
+    let ResultTxt = ""
+    switch (choice) {
+        case 1: ResultTxt = `Result is ${inputVector(1).size()} unit(s).`
+            break
+        // TODO Case 2 : Multiply
+        // TODO Case 3 : Add
+        // TODO Case 4 : Subtract
+        // TODO Case 5 : Dot Product
+        case 6:
+            let ResultVector = inputVector(1).crossProduct(inputVector(2))
+            ResultTxt = `Result is ${ResultVector.formattedPrint()}`
+        // TODO Case 7 : Project Vector on another
+        // TODO Case 8 : Parallelogram Area
+        default:
+            ResultTxt = "Unknown Choice, not implemented yet."
+    }
+    document.getElementById("ResultTxt").innerHTML = ResultTxt
+}
 // ! Below is not program feature, test purpose only!
-let a: number = parseInt(prompt("Gimme i"))
-let b: number = parseInt(prompt("Gimme j"))
-let c: number = parseInt(prompt("Gimme k"))
-let d: number = parseInt(prompt("Gimme i"))
-let e: number = parseInt(prompt("Gimme j"))
-let f: number = parseInt(prompt("Gimme k"))
-let u = new Vector(a, b, c)
-let v = new Vector(d, e, f)
-alert(`Cross Vec Result is ${formattedPrint(u.crossProduct(v))}`)
