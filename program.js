@@ -2,6 +2,7 @@
  * * program.(js/ts)
  * * Core Program to run this website
  */
+// TODO Add feature to set this value, if possible, support cookie
 var decimalPlaces = 2;
 var Vector = /** @class */ (function () {
     function Vector(i, j, k) {
@@ -52,6 +53,7 @@ var Vector = /** @class */ (function () {
     Vector.prototype.parallelogramArea = function (op) {
         return this.crossProduct(op).size();
     };
+    // * Method for formatted printing
     Vector.prototype.formattedPrint = function () {
         var i = this.i.toFixed(decimalPlaces);
         var j = this.j.toFixed(decimalPlaces);
@@ -60,6 +62,7 @@ var Vector = /** @class */ (function () {
     };
     return Vector;
 }());
+// * Function that input Vector from <input>
 function inputVector(VectorID) {
     if (VectorID === void 0) { VectorID = 1; }
     var i, j, k;
@@ -78,6 +81,7 @@ function inputVector(VectorID) {
     k = parseInt(k);
     return new Vector(i, j, k);
 }
+// * Operation when <button> have been clicked
 function Operation(choice) {
     var ResultTxt = "";
     var ResultVector = null;
@@ -115,4 +119,3 @@ function Operation(choice) {
     }
     document.getElementById("ResultTxt").innerHTML = ResultTxt;
 }
-// ! Below is not program feature, test purpose only!

@@ -3,6 +3,7 @@
  * * Core Program to run this website
  */
 
+// TODO Add feature to set this value, if possible, support cookie
 var decimalPlaces = 2
 
 class Vector {
@@ -59,6 +60,8 @@ class Vector {
     parallelogramArea(op: Vector): number {
         return this.crossProduct(op).size()
     }
+
+    // * Method for formatted printing
     formattedPrint(): String {
         let i = this.i.toFixed(decimalPlaces)
         let j = this.j.toFixed(decimalPlaces)
@@ -67,6 +70,7 @@ class Vector {
     }
 }
 
+// * Function that input Vector from <input>
 function inputVector(VectorID: number = 1): Vector {
     let i: any, j: any, k: any
 
@@ -87,6 +91,7 @@ function inputVector(VectorID: number = 1): Vector {
     return new Vector(i, j, k)
 }
 
+// * Operation when <button> have been clicked
 function Operation(choice: number): void {
     let ResultTxt = ""
     let ResultVector: Vector = null
@@ -124,5 +129,3 @@ function Operation(choice: number): void {
     }
     document.getElementById("ResultTxt").innerHTML = ResultTxt
 }
-
-// ! Below is not program feature, test purpose only!
