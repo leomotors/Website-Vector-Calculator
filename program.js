@@ -52,9 +52,20 @@ var Vector = /** @class */ (function () {
     };
     return Vector;
 }());
+function formattedPrint(u, decimalPlaces) {
+    if (decimalPlaces === void 0) { decimalPlaces = 2; }
+    var i = u.i.toFixed(decimalPlaces);
+    var j = u.j.toFixed(decimalPlaces);
+    var k = u.k.toFixed(decimalPlaces);
+    return "( " + i + " , " + j + " , " + k + " )";
+}
 // ! Below is not program feature, test purpose only!
 var a = parseInt(prompt("Gimme i"));
 var b = parseInt(prompt("Gimme j"));
 var c = parseInt(prompt("Gimme k"));
+var d = parseInt(prompt("Gimme i"));
+var e = parseInt(prompt("Gimme j"));
+var f = parseInt(prompt("Gimme k"));
 var u = new Vector(a, b, c);
-alert(u.size());
+var v = new Vector(d, e, f);
+alert("Cross Vec Result is " + formattedPrint(u.crossProduct(v)));

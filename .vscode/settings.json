@@ -1,2 +1,5 @@
-{ 
-} 
+{
+    "code-runner.executorMap": {
+        "typescript": "tsc"
+    }
+}

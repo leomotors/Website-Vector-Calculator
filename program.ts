@@ -52,16 +52,25 @@ class Vector {
         let w = op.multiply(OneUnitVector)
         return w
     }
-    parrallelogramArea(op: Vector)
-    {
+    parrallelogramArea(op: Vector) {
         return this.crossProduct(op).size()
     }
 }
 
-// ! Below is not program feature, test purpose only!
-let a:number = parseInt(prompt("Gimme i"))
-let b:number = parseInt(prompt("Gimme j"))
-let c:number = parseInt(prompt("Gimme k"))
-let u = new Vector(a,b,c)
+function formattedPrint(u: Vector , decimalPlaces:number = 2): String {
+    let i = u.i.toFixed(decimalPlaces)
+    let j = u.j.toFixed(decimalPlaces)
+    let k = u.k.toFixed(decimalPlaces)
+    return `( ${i} , ${j} , ${k} )`
+}
 
-alert(u.size())
+// ! Below is not program feature, test purpose only!
+let a: number = parseInt(prompt("Gimme i"))
+let b: number = parseInt(prompt("Gimme j"))
+let c: number = parseInt(prompt("Gimme k"))
+let d: number = parseInt(prompt("Gimme i"))
+let e: number = parseInt(prompt("Gimme j"))
+let f: number = parseInt(prompt("Gimme k"))
+let u = new Vector(a, b, c)
+let v = new Vector(d,e,f)
+alert(`Cross Vec Result is ${formattedPrint(u.crossProduct(v))}`)
