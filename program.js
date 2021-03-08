@@ -1,6 +1,6 @@
 /**
  * * program.(js/ts)
- * TODO integrate with website
+ * * Core Program to run this website
  */
 var decimalPlaces = 2;
 var Vector = /** @class */ (function () {

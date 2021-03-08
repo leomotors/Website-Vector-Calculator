@@ -4,10 +4,14 @@
 }
 
 body {
+    /*
+    * * Background for test purpose, to be changed.
+    */
     background-image: url("/assets/イレイナとชานมไข่มุก.jpg");
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
+
     font-family: "System Font","PrintAble4U","Consolas";
     align-content:center;
     align-self:center;
