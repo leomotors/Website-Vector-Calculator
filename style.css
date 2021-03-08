@@ -12,3 +12,19 @@ body {
     align-content:center;
     align-self:center;
 }
+
+#ProgramHeader {
+    text-align: center;
+    background-color: white;
+    border: 5px white;
+}
+h2{
+    align-content: center;
+}
+input{
+    align-content: center;
+    background-color: lightblue;
+}
+button{
+    align-content: center;
+}
