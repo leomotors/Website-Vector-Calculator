@@ -64,14 +64,14 @@ function inputVector(VectorID) {
     if (VectorID === void 0) { VectorID = 1; }
     var i, j, k;
     if (VectorID == 1) {
-        i = document.getElementById("vectori").value;
-        j = document.getElementById("vectorj").value;
-        k = document.getElementById("vectork").value;
+        i = document.getElementById("vector-i").value;
+        j = document.getElementById("vector-j").value;
+        k = document.getElementById("vector-k").value;
     }
     else {
-        i = document.getElementById("operandi").value;
-        j = document.getElementById("operandj").value;
-        k = document.getElementById("operandk").value;
+        i = document.getElementById("operand-i").value;
+        j = document.getElementById("operand-j").value;
+        k = document.getElementById("operand-k").value;
     }
     i = parseInt(i);
     j = parseInt(j);

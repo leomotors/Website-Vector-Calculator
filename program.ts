@@ -71,14 +71,14 @@ function inputVector(VectorID: number = 1): Vector {
     let i:any, j:any, k:any
 
     if (VectorID == 1) {
-        i = (<HTMLInputElement>document.getElementById("vectori")).value
-        j = (<HTMLInputElement>document.getElementById("vectorj")).value
-        k = (<HTMLInputElement>document.getElementById("vectork")).value
+        i = (<HTMLInputElement>document.getElementById("vector-i")).value
+        j = (<HTMLInputElement>document.getElementById("vector-j")).value
+        k = (<HTMLInputElement>document.getElementById("vector-k")).value
     }
     else {
-        i = (<HTMLInputElement>document.getElementById("operandi")).value
-        j = (<HTMLInputElement>document.getElementById("operandj")).value
-        k = (<HTMLInputElement>document.getElementById("operandk")).value
+        i = (<HTMLInputElement>document.getElementById("operand-i")).value
+        j = (<HTMLInputElement>document.getElementById("operand-j")).value
+        k = (<HTMLInputElement>document.getElementById("operand-k")).value
     }
 
     i = parseInt(i)
@@ -124,4 +124,5 @@ function Operation(choice: number) {
     }
     document.getElementById("ResultTxt").innerHTML = ResultTxt
 }
+
 // ! Below is not program feature, test purpose only!
