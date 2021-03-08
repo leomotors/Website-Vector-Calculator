@@ -6,6 +6,10 @@
 // TODO Add feature to set this value, if possible, support cookie
 var decimalPlaces = 2
 
+function TurnOnWeeb() {
+    let abrvString = "url(\"/assets/イレイナとชานมไข่มุก.jpg\")"
+    document.getElementById("Body").style.backgroundImage = abrvString
+}
 class Vector {
     i: number
     j: number
@@ -52,6 +56,8 @@ class Vector {
         let k = this.i * op.j - this.j * op.i
         return new Vector(i, j, k)
     }
+
+    // * Class Method that call other Method
     projectOn(op: Vector): Vector {
         let projectedVectorRelSize = this.dotProduct(op) / (op.size() * op.size())
         let w = op.multiply(projectedVectorRelSize)
