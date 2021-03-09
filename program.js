@@ -138,12 +138,17 @@ function SetDecimalPlaces() {
     else
         alert("Decimal Places must be between 0-50!");
 }
-// * Temporary, to be changed.
-function TurnOnWeeb() {
-    var abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")";
-    document.getElementById("Body").style.backgroundImage = abrvString;
-}
-function GoHuaHin() {
-    var abrvString = "url(\"./assets/HuaHin Luxury Resort View.jpg\")";
-    document.getElementById("Body").style.backgroundImage = abrvString;
+// * Dictionary for Background Settings
+// TODO Import from other file instead
+var bgnameDict = {
+    // * Key: Value in HTML
+    // * Value: Location from ./assets/
+    "Elaina & Bubble Tea": "イレイナとชานมไข่มุก.jpg",
+    "Hua Hin Sea Resort View": "HuaHin Luxury Resort View.jpg"
+};
+// * Set Background
+function SetBackground() {
+    var selectBg = document.getElementById("bgChosen").value;
+    var bgString = "url(\"./assets/" + bgnameDict[selectBg] + "\")";
+    document.getElementById("Body").style.backgroundImage = bgString;
 }

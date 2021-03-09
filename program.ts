@@ -153,13 +153,19 @@ function SetDecimalPlaces() {
         alert("Decimal Places must be between 0-50!")
 }
 
-// * Temporary, to be changed.
-function TurnOnWeeb() {
-    let abrvString: string = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")"
-    document.getElementById("Body").style.backgroundImage = abrvString
+// * Dictionary for Background Settings
+// TODO Import from other file instead
+var bgnameDict:object = {
+    // * Key: Value in HTML
+    // * Value: Location from ./assets/
+    "Elaina & Bubble Tea" : "イレイナとชานมไข่มุก.jpg",
+    "Hua Hin Sea Resort View" : "HuaHin Luxury Resort View.jpg"
 }
 
-function GoHuaHin() {
-    let abrvString: string = "url(\"./assets/HuaHin Luxury Resort View.jpg\")"
-    document.getElementById("Body").style.backgroundImage = abrvString
+// * Set Background
+function SetBackground()
+{
+    let selectBg:string = (<HTMLInputElement>document.getElementById("bgChosen")).value
+    let bgString:string = `url("./assets/${bgnameDict[selectBg]}")`
+    document.getElementById("Body").style.backgroundImage = bgString 
 }
