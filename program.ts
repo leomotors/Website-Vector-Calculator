@@ -95,14 +95,18 @@ function inputVector(VectorID: number = 1): Vector {
 
 // * Operation when <button> have been clicked
 function Operation(choice: number): void {
-    let ResultTxt: string = ""
-    let ResultVector: Vector = null
+    let ResultVector: Vector = null // * Store Result Vector
+    let ResultTxt: string = "" // * Store Text to display
+
     switch (choice) {
         // * One Vector Operation
         case 1: ResultTxt = `Result is ${inputVector(1).size().toFixed(decimalPlaces)} unit(s).`
             break
-        // TODO Case 2 : Multiply
-
+        case 2:
+            let multiplicand:number = parseInt(prompt("Please enter Multiplicand"))
+            ResultTxt = `Result is ${inputVector(1).multiply(multiplicand)}`
+            break
+            
         // * Two Vector Operation
         case 3:
             ResultVector = inputVector(1).add(inputVector(2))
@@ -145,8 +149,11 @@ function Operation(choice: number): void {
 
 // * Set Display Decimal Places
 function SetDecimalPlaces() {
-    let inputNum: string = (<HTMLInputElement>document.getElementById("DecimalPlacesInput")).value
-    decimalPlaces = parseInt(inputNum)
+    let inputNum: number = parseInt((<HTMLInputElement>document.getElementById("DecimalPlacesInput")).value)
+    if (inputNum >= 0 && inputNum <= 50)
+        decimalPlaces = inputNum
+    else
+        alert("Decimal Places must be between 0-50!")
 }
 
 // * Temporary, to be changed.

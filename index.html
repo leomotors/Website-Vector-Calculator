@@ -13,7 +13,7 @@
     <title>Vector Calculator (Web Version)</title>
 </head>
 
-<body id="Body" onload="alert(decimalPlaces)">
+<body id="Body">
     <div id="logo">VecCalcLogo (please pretend it is)</div>
     <h1 id="ProgramTitle">
         Vector Calculator
@@ -46,9 +46,9 @@
     <button onclick="Operation(8)">Parallelogram area</button> <br>
     <p id="ResultTxt02" class="ResultTxt"></p>
     <br><br>
-    <div>
+    <div id="DecimalPlacesSettings">
             Decimal Places: 
-            <input type="number" id="DecimalPlacesInput">
+            <input type="number" id="DecimalPlacesInput" min=0 max=50>
             <button onclick = "SetDecimalPlaces()">Set</button>
     </div>
     <!--? "イレイナがชานมไข่มุกを持っているは可愛い" (Trouble Shoot For MSEdge)-->

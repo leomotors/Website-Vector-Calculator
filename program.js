@@ -84,14 +84,17 @@ function inputVector(VectorID) {
 }
 // * Operation when <button> have been clicked
 function Operation(choice) {
-    var ResultTxt = "";
-    var ResultVector = null;
+    var ResultVector = null; // * Store Result Vector
+    var ResultTxt = ""; // * Store Text to display
     switch (choice) {
         // * One Vector Operation
         case 1:
             ResultTxt = "Result is " + inputVector(1).size().toFixed(decimalPlaces) + " unit(s).";
             break;
-        // TODO Case 2 : Multiply
+        case 2:
+            var multiplicand = parseInt(prompt("Please enter Multiplicand"));
+            ResultTxt = "Result is " + inputVector(1).multiply(multiplicand);
+            break;
         // * Two Vector Operation
         case 3:
             ResultVector = inputVector(1).add(inputVector(2));
@@ -132,8 +135,11 @@ function Operation(choice) {
 }
 // * Set Display Decimal Places
 function SetDecimalPlaces() {
-    var inputNum = document.getElementById("DecimalPlacesInput").value;
-    decimalPlaces = parseInt(inputNum);
+    var inputNum = parseInt(document.getElementById("DecimalPlacesInput").value);
+    if (inputNum >= 0 && inputNum <= 50)
+        decimalPlaces = inputNum;
+    else
+        alert("Decimal Places must be between 0-50!");
 }
 // * Temporary, to be changed.
 function TurnOnWeeb() {
