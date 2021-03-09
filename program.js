@@ -146,15 +146,19 @@ var bgNameDict = {
     // * Key: Value sent from HTML
     // * Value: Another Dictionary of property:value
     "Default01": {
+        "displayname": "Default 01",
         "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
     },
     "Default02": {
+        "displayname": "Default 02",
         "filelocation": "Samsung_Galaxy/Galaxy_Tab_S7_Wallpaper_9.jpg"
     },
     "Elaina & Bubble Tea": {
+        "displayname": "Elaina & Bubb;e Tea (Cute)",
         "filelocation": "イレイナとชานมไข่มุก.jpg"
     },
     "Hua Hin Sea Resort View": {
+        "displayname": "Hua Hin Sea Resort View",
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
     }
 };
