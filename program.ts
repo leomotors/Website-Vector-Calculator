@@ -154,18 +154,17 @@ function SetDecimalPlaces() {
 }
 
 // * Dictionary for Background Settings
-// TODO Import from other file instead
-var bgnameDict:object = {
+var bgNameDict: object = {
+    // TODO Import from other file instead
     // * Key: Value in HTML
     // * Value: Location from ./assets/
-    "Elaina & Bubble Tea" : "イレイナとชานมไข่มุก.jpg",
-    "Hua Hin Sea Resort View" : "HuaHin Luxury Resort View.jpg"
+    "Elaina & Bubble Tea": "イレイナとชานมไข่มุก.jpg",
+    "Hua Hin Sea Resort View": "HuaHin Luxury Resort View.jpg"
 }
 
 // * Set Background
-function SetBackground()
-{
-    let selectBg:string = (<HTMLInputElement>document.getElementById("bgChosen")).value
-    let bgString:string = `url("./assets/${bgnameDict[selectBg]}")`
-    document.getElementById("Body").style.backgroundImage = bgString 
+function SetBackground() {
+    let selectBg: string = (<HTMLInputElement>document.getElementById("bgChosen")).value
+    let bgString: string = `url("./assets/${bgNameDict[selectBg]}")`
+    document.getElementById("Body").style.backgroundImage = bgString
 }

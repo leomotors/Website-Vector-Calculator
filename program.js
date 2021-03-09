@@ -139,8 +139,8 @@ function SetDecimalPlaces() {
         alert("Decimal Places must be between 0-50!");
 }
 // * Dictionary for Background Settings
-// TODO Import from other file instead
-var bgnameDict = {
+var bgNameDict = {
+    // TODO Import from other file instead
     // * Key: Value in HTML
     // * Value: Location from ./assets/
     "Elaina & Bubble Tea": "イレイナとชานมไข่มุก.jpg",
@@ -149,6 +149,6 @@ var bgnameDict = {
 // * Set Background
 function SetBackground() {
     var selectBg = document.getElementById("bgChosen").value;
-    var bgString = "url(\"./assets/" + bgnameDict[selectBg] + "\")";
+    var bgString = "url(\"./assets/" + bgNameDict[selectBg] + "\")";
     document.getElementById("Body").style.backgroundImage = bgString;
 }
