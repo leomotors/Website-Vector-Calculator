@@ -77,10 +77,7 @@ function inputVector(VectorID) {
         j = document.getElementById("operand-j").value;
         k = document.getElementById("operand-k").value;
     }
-    i = parseInt(i);
-    j = parseInt(j);
-    k = parseInt(k);
-    return new Vector(i, j, k);
+    return new Vector(parseInt(i), parseInt(j), parseInt(k));
 }
 // * Operation when <button> have been clicked
 function Operation(choice) {
