@@ -4,7 +4,7 @@
  */
 
 // TODO Add feature to set this value, if possible, support cookie
-var decimalPlaces = 2
+var decimalPlaces: number = 2
 
 class Vector {
     i: number
@@ -19,44 +19,44 @@ class Vector {
 
     // * Class Method (Vector Calculation)
     size(): number {
-        let result = this.i * this.i + this.j * this.j + this.k * this.k
+        let result: number = this.i * this.i + this.j * this.j + this.k * this.k
         return Math.sqrt(result)
     }
     multiply(multiplicand: number): Vector {
-        let i = this.i * multiplicand
-        let j = this.j * multiplicand
-        let k = this.k * multiplicand
+        let i: number = this.i * multiplicand
+        let j: number = this.j * multiplicand
+        let k: number = this.k * multiplicand
         return new Vector(i, j, k)
     }
     add(operand: Vector): Vector {
-        let i = this.i + operand.i
-        let j = this.j + operand.j
-        let k = this.k + operand.k
+        let i: number = this.i + operand.i
+        let j: number = this.j + operand.j
+        let k: number = this.k + operand.k
         return new Vector(i, j, k)
     }
     subtract(operand: Vector): Vector {
-        let i = this.i - operand.i
-        let j = this.j - operand.j
-        let k = this.k - operand.k
+        let i: number = this.i - operand.i
+        let j: number = this.j - operand.j
+        let k: number = this.k - operand.k
         return new Vector(i, j, k)
     }
     dotProduct(operand: Vector): number {
-        let i = this.i * operand.i
-        let j = this.j * operand.j
-        let k = this.k * operand.k
+        let i: number = this.i * operand.i
+        let j: number = this.j * operand.j
+        let k: number = this.k * operand.k
         return i + j + k
     }
     crossProduct(operand: Vector): Vector {
-        let i = this.j * operand.k - this.k * operand.j
-        let j = this.k * operand.i - this.i * operand.k
-        let k = this.i * operand.j - this.j * operand.i
+        let i: number = this.j * operand.k - this.k * operand.j
+        let j: number = this.k * operand.i - this.i * operand.k
+        let k: number = this.i * operand.j - this.j * operand.i
         return new Vector(i, j, k)
     }
 
     // * Class Method that call other Method
     projectOn(operand: Vector): Vector {
-        let projectedVectorRelSize = this.dotProduct(operand) / (operand.size() * operand.size())
-        let w = operand.multiply(projectedVectorRelSize)
+        let projectedVectorRelSize: number = this.dotProduct(operand) / (operand.size() * operand.size())
+        let w: Vector = operand.multiply(projectedVectorRelSize)
         return w
     }
     parallelogramArea(operand: Vector): number {
@@ -65,16 +65,16 @@ class Vector {
 
     // * Method for formatted printing
     formattedPrint(): String {
-        let i = this.i.toFixed(decimalPlaces)
-        let j = this.j.toFixed(decimalPlaces)
-        let k = this.k.toFixed(decimalPlaces)
+        let i: string = this.i.toFixed(decimalPlaces)
+        let j: string = this.j.toFixed(decimalPlaces)
+        let k: string = this.k.toFixed(decimalPlaces)
         return `( ${i} , ${j} , ${k} )`
     }
 }
 
 // * Function that input Vector from <input>
 function inputVector(VectorID: number = 1): Vector {
-    let i: any, j: any, k: any
+    let i: string, j: string, k: string
 
     if (VectorID == 1) {
         i = (<HTMLInputElement>document.getElementById("vector-i")).value
@@ -87,10 +87,7 @@ function inputVector(VectorID: number = 1): Vector {
         k = (<HTMLInputElement>document.getElementById("operand-k")).value
     }
 
-    i = parseInt(i)
-    j = parseInt(j)
-    k = parseInt(k)
-    return new Vector(i, j, k)
+    return new Vector(parseInt(i), parseInt(j), parseInt(k))
 }
 
 // * Operation when <button> have been clicked
@@ -103,10 +100,10 @@ function Operation(choice: number): void {
         case 1: ResultTxt = `Result is ${inputVector(1).size().toFixed(decimalPlaces)} unit(s).`
             break
         case 2:
-            let multiplicand:number = parseInt(prompt("Please enter Multiplicand"))
+            let multiplicand: number = parseInt(prompt("Please enter Multiplicand"))
             ResultTxt = `Result is ${inputVector(1).multiply(multiplicand)}`
             break
-            
+
         // * Two Vector Operation
         case 3:
             ResultVector = inputVector(1).add(inputVector(2))
