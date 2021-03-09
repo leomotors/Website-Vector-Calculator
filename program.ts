@@ -87,7 +87,7 @@ function inputVector(VectorID: number = 1): Vector {
         k = (<HTMLInputElement>document.getElementById("operand-k")).value
     }
 
-    return new Vector(parseInt(i), parseInt(j), parseInt(k))
+    return new Vector(parseFloat(i), parseFloat(j), parseFloat(k))
 }
 
 // * Operation when <button> have been clicked
@@ -181,5 +181,4 @@ function SetBackground() {
     let bgString: string = `url(${filelocation})`
     document.getElementById("Body").style.backgroundImage = bgString    
     console.log(`Set background to ${filelocation}`)
-    console.log(`With property of ${bgString}`)
 }
