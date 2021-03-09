@@ -2,7 +2,7 @@
  * * program.(js/ts)
  * * Core Program to run this website
  */
-// TODO Add feature to set this value, if possible, support cookie
+// TODO If possible add cookie.
 var decimalPlaces = 2;
 var Vector = /** @class */ (function () {
     function Vector(i, j, k) {
@@ -90,7 +90,7 @@ function Operation(choice) {
             break;
         case 2:
             var multiplicand = parseInt(prompt("Please enter Multiplicand"));
-            ResultTxt = "Result is " + inputVector(1).multiply(multiplicand);
+            ResultTxt = "Result is " + inputVector(1).multiply(multiplicand).formattedPrint();
             break;
         // * Two Vector Operation
         case 3:

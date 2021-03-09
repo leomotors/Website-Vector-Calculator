@@ -3,7 +3,7 @@
  * * Core Program to run this website
  */
 
-// TODO Add feature to set this value, if possible, support cookie
+// TODO If possible add cookie.
 var decimalPlaces: number = 2
 
 class Vector {
@@ -101,7 +101,7 @@ function Operation(choice: number): void {
             break
         case 2:
             let multiplicand: number = parseInt(prompt("Please enter Multiplicand"))
-            ResultTxt = `Result is ${inputVector(1).multiply(multiplicand)}`
+            ResultTxt = `Result is ${inputVector(1).multiply(multiplicand).formattedPrint()}`
             break
 
         // * Two Vector Operation
