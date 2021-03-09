@@ -82,17 +82,17 @@ function inputVector(VectorID) {
     k = parseInt(k);
     return new Vector(i, j, k);
 }
-// * operation when <button> have been clicked
-function operation(choice) {
+// * Operation when <button> have been clicked
+function Operation(choice) {
     var ResultTxt = "";
     var ResultVector = null;
     switch (choice) {
-        // * One Vector operation
+        // * One Vector Operation
         case 1:
             ResultTxt = "Result is " + inputVector(1).size().toFixed(decimalPlaces) + " unit(s).";
             break;
         // TODO Case 2 : Multiply
-        // * Two Vector operation
+        // * Two Vector Operation
         case 3:
             ResultVector = inputVector(1).add(inputVector(2));
             ResultTxt = "Result is " + ResultVector.formattedPrint();
@@ -132,7 +132,8 @@ function operation(choice) {
 }
 // * Set Display Decimal Places
 function SetDecimalPlaces() {
-    alert(parseInt(document.getElementById("DecimalPlacesInput").value));
+    var inputNum = document.getElementById("DecimalPlacesInput").value;
+    decimalPlaces = parseInt(inputNum);
 }
 // * Temporary, to be changed.
 function TurnOnWeeb() {
