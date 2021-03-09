@@ -4,6 +4,12 @@ Upgraded (or no?) Vector Calculator to be run on website using HTML!
 
 Current Version : **Snapshot - Under Development**
 
+## Development
+
+Using HTML, CSS and JavaScript knowledge to create this website
+
+Script is developed using TypeScript
+
 ## Reference
 
 <a href = "https://github.com/Leomotors/Mini-Vector-Calculator">Mini Vector Calculator Project</a> by me!
