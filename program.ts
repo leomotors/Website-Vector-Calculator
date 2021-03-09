@@ -147,8 +147,10 @@ function Operation(choice: number): void {
 // * Set Display Decimal Places
 function SetDecimalPlaces() {
     let inputNum: number = parseInt((<HTMLInputElement>document.getElementById("DecimalPlacesInput")).value)
-    if (inputNum >= 0 && inputNum <= 50)
+    if (inputNum >= 0 && inputNum <= 50) {
         decimalPlaces = inputNum
+        console.log(`Changed Decimal Places to ${inputNum}`)
+    }
     else
         alert("Decimal Places must be between 0-50!")
 }
@@ -156,15 +158,28 @@ function SetDecimalPlaces() {
 // * Dictionary for Background Settings
 var bgNameDict: object = {
     // TODO Import from other file instead
-    // * Key: Value in HTML
-    // * Value: Location from ./assets/
-    "Elaina & Bubble Tea": "イレイナとชานมไข่มุก.jpg",
-    "Hua Hin Sea Resort View": "HuaHin Luxury Resort View.jpg"
+    // * Key: Value sent from HTML
+    // * Value: Another Dictionary of property:value
+    "Default01": {
+        "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
+    },
+    "Default02": {
+        "filelocation": "Samsung_Galaxy/Galaxy_Tab_S7_Wallpaper_9.jpg"
+    },
+    "Elaina & Bubble Tea": {
+        "filelocation": "イレイナとชานมไข่มุก.jpg"
+    },
+    "Hua Hin Sea Resort View": {
+        "filelocation": "HuaHin_Luxury_Resort_View.jpg"
+    }
 }
 
 // * Set Background
 function SetBackground() {
     let selectBg: string = (<HTMLInputElement>document.getElementById("bgChosen")).value
-    let bgString: string = `url("./assets/${bgNameDict[selectBg]}")`
-    document.getElementById("Body").style.backgroundImage = bgString
+    let filelocation: string = `./assets/${bgNameDict[selectBg]["filelocation"]}`
+    let bgString: string = `url(${filelocation})`
+    document.getElementById("Body").style.backgroundImage = bgString    
+    console.log(`Set background to ${filelocation}`)
+    console.log(`With property of ${bgString}`)
 }

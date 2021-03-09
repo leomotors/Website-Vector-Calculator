@@ -4,6 +4,8 @@
 }
 
 body {
+    /* Default */
+    background-image: url("./assets/Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg");
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
