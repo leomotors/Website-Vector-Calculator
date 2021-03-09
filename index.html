@@ -6,7 +6,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" href="style.css">
@@ -22,8 +22,11 @@
     <h3>
         Main Vector:
     </h3>
+    <label for="vector-i"></label>
     <input id="vector-i" type="text" />
+    <label for="vector-j"></label>
     <input id="vector-j" type="text" />
+    <label for="vector-k"></label>
     <input id="vector-k" type="text" />
     <br><br>
 
@@ -33,8 +36,11 @@
     <p id="ResultTxt01" class="ResultTxt"></p>
     <h2>Two Vector Operation</h2>
     <h3>Operand Vector: </h3>
+    <label for="operand-i"></label>
     <input id="operand-i" type="text" />
+    <label for="operand-j"></label>
     <input id="operand-j" type="text" />
+    <label for="operand-k"></label>
     <input id="operand-k" type="text" />
     <br><br>
 
@@ -47,13 +53,15 @@
     <p id="ResultTxt02" class="ResultTxt"></p>
     <br><br>
     <div id="DecimalPlacesSettings">
-        Decimal Places:
+        <label for="DecimalPlacesInput">
+            Decimal Places:
+        </label>
         <input type="number" id="DecimalPlacesInput" min=0 max=50>
         <button onclick="SetDecimalPlaces()">Set</button>
     </div>
     <br>
     <!--TODO Add more background-->
-    <label for="bgSelect">Choose a background: </label>
+    <label for="bgChosen">Choose a background: </label>
     <select name="bgSelect" id="bgChosen" onchange="SetBackground()">
         <option value="NoBackground">Default</option>
         <option value="Elaina & Bubble Tea">Elaina & Bubble Tea</option>
