@@ -4,35 +4,20 @@
 }
 
 body {
-    /*
-    * * Background for test purpose, to be changed.
-    */
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
-
+    
     font-family: "System Font","PrintAble4U","Consolas";
-    align-content:center;
-    align-self:center;
 }
 
-#ProgramHeader {
+#ProgramTitle {
     text-align: center;
     background-color: white;
-    border: 5px white;
-}
-h2{
-    align-content: center;
-}
-input{
-    align-content: center;
-    background-color: lightblue;
-}
-button{
-    align-content: center;
+    width: 350px;
 }
 
-#ResultTxt{
+.ResultTxt{
     font-size: 200%;
     font-weight: 600;
 }

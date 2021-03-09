@@ -28,39 +28,39 @@ class Vector {
         let k = this.k * multiplicand
         return new Vector(i, j, k)
     }
-    add(op: Vector): Vector {
-        let i = this.i + op.i
-        let j = this.j + op.j
-        let k = this.k + op.k
+    add(operand: Vector): Vector {
+        let i = this.i + operand.i
+        let j = this.j + operand.j
+        let k = this.k + operand.k
         return new Vector(i, j, k)
     }
-    subtract(op: Vector): Vector {
-        let i = this.i - op.i
-        let j = this.j - op.j
-        let k = this.k - op.k
+    subtract(operand: Vector): Vector {
+        let i = this.i - operand.i
+        let j = this.j - operand.j
+        let k = this.k - operand.k
         return new Vector(i, j, k)
     }
-    dotProduct(op: Vector): number {
-        let i = this.i * op.i
-        let j = this.j * op.j
-        let k = this.k * op.k
+    dotProduct(operand: Vector): number {
+        let i = this.i * operand.i
+        let j = this.j * operand.j
+        let k = this.k * operand.k
         return i + j + k
     }
-    crossProduct(op: Vector): Vector {
-        let i = this.j * op.k - this.k * op.j
-        let j = this.k * op.i - this.i * op.k
-        let k = this.i * op.j - this.j * op.i
+    crossProduct(operand: Vector): Vector {
+        let i = this.j * operand.k - this.k * operand.j
+        let j = this.k * operand.i - this.i * operand.k
+        let k = this.i * operand.j - this.j * operand.i
         return new Vector(i, j, k)
     }
 
     // * Class Method that call other Method
-    projectOn(op: Vector): Vector {
-        let projectedVectorRelSize = this.dotProduct(op) / (op.size() * op.size())
-        let w = op.multiply(projectedVectorRelSize)
+    projectOn(operand: Vector): Vector {
+        let projectedVectorRelSize = this.dotProduct(operand) / (operand.size() * operand.size())
+        let w = operand.multiply(projectedVectorRelSize)
         return w
     }
-    parallelogramArea(op: Vector): number {
-        return this.crossProduct(op).size()
+    parallelogramArea(operand: Vector): number {
+        return this.crossProduct(operand).size()
     }
 
     // * Method for formatted printing
@@ -95,7 +95,7 @@ function inputVector(VectorID: number = 1): Vector {
 
 // * Operation when <button> have been clicked
 function Operation(choice: number): void {
-    let ResultTxt = ""
+    let ResultTxt: string = ""
     let ResultVector: Vector = null
     switch (choice) {
         // * One Vector Operation
@@ -127,19 +127,35 @@ function Operation(choice: number): void {
             ResultTxt = `Result is ${inputVector(1).parallelogramArea(inputVector(2)).toFixed(decimalPlaces)} sq.unit.`
             break
         default:
-            ResultTxt = "Unknown Choice, not implemented yet."
+            ResultTxt = "Unknown Choice, is invalid or not implemented."
     }
-    document.getElementById("ResultTxt").innerHTML = ResultTxt
+
+    // * Clean Output
+    let ResultClass: any = document.getElementsByClassName("ResultTxt")
+    for (let element of ResultClass) {
+        element.innerHTML = ""
+    }
+
+    // * Show Output
+    if (choice <= 2)
+        document.getElementById("ResultTxt01").innerHTML = ResultTxt
+    else
+        document.getElementById("ResultTxt02").innerHTML = ResultTxt
 }
 
+// * Set Display Decimal Places
+function SetDecimalPlaces() {
+    let inputNum: string = (<HTMLInputElement>document.getElementById("DecimalPlacesInput")).value
+    decimalPlaces = parseInt(inputNum)
+}
 
+// * Temporary, to be changed.
 function TurnOnWeeb() {
-    let abrvString = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")"
+    let abrvString: string = "url(\"./assets/イレイナとชานมไข่มุก.jpg\")"
     document.getElementById("Body").style.backgroundImage = abrvString
 }
 
-function GoHuaHin()
-{
-    let abrvString = "url(\"./assets/HuaHin Luxury Resort View.jpg\")"
+function GoHuaHin() {
+    let abrvString: string = "url(\"./assets/HuaHin Luxury Resort View.jpg\")"
     document.getElementById("Body").style.backgroundImage = abrvString
 }

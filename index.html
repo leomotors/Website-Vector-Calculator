@@ -13,33 +13,29 @@
     <title>Vector Calculator (Web Version)</title>
 </head>
 
-<body id="Body">
+<body id="Body" onload="alert(decimalPlaces)">
     <div id="logo">VecCalcLogo (please pretend it is)</div>
-    <h1 id="ProgramHeader">
+    <h1 id="ProgramTitle">
         Vector Calculator
     </h1>
     <hr>
     <h3>
         Main Vector:
     </h3>
-    <form>
         <input id="vector-i" type="text" />
         <input id="vector-j" type="text" />
         <input id="vector-k" type="text" />
-    </form>
     <br><br>
 
     <h2>One Vector Operation</h2>
     <button onclick="Operation(1)">Calculate Size</button> <br>
     <button onclick="Operation(2)">Multiply Size</button> <br>
-
+    <p id="ResultTxt01" class="ResultTxt"></p>
     <h2>Two Vector Operation</h2>
     <h3>Operand Vector: </h3>
-    <form>
         <input id="operand-i" type="text" />
         <input id="operand-j" type="text" />
         <input id="operand-k" type="text" />
-    </form>
     <br><br>
 
     <button onclick="Operation(3)">Add Vector</button> <br>
@@ -48,9 +44,13 @@
     <button onclick="Operation(6)">Cross Product of Vector</button> <br>
     <button onclick="Operation(7)">Project Vector on another</button> <br>
     <button onclick="Operation(8)">Parallelogram area</button> <br>
-    <p id="ResultTxt"></p>
+    <p id="ResultTxt02" class="ResultTxt"></p>
     <br><br>
-
+    <div>
+            Decimal Places: 
+            <input type="number" id="DecimalPlacesInput">
+            <button onclick = "SetDecimalPlaces()">Set</button>
+    </div>
     <!--? "イレイナがชานมไข่มุกを持っているは可愛い" (Trouble Shoot For MSEdge)-->
     <!--? By entering Thai Lang above as comment,-->
     <!--? I think it enabled Non-ASCII Mode. Not sure for other browser.-->
