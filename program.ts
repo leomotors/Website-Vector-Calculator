@@ -7,9 +7,9 @@
 var decimalPlaces: number = 2
 
 class Vector {
-    i: number
-    j: number
-    k: number
+    readonly i: number
+    readonly j: number
+    readonly k: number
 
     constructor(i: number, j: number, k: number) {
         this.i = i
