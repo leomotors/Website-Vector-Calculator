@@ -13,6 +13,10 @@ body {
     font-family: "System Font","PrintAble4U","Consolas";
 }
 
+.VectorInput {
+    width:7em;
+}
+
 #ProgramTitle {
     text-align: center;
     /* background-color: white;
