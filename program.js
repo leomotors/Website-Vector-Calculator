@@ -145,7 +145,8 @@ function SetDecimalPlaces() {
 // * BACKGROUND SETTINGS SECTION
 // * Dictionary for Background Settings
 var bgNameDict = {
-    // TODO Import from other file instead (.json)
+    // ! Look like it's impossible to import from other file.
+    // ! Unless host through server while this project want it to work locally.
     // * Key: Value of <option> in <select>
     // * Value: Another Dictionary of property:value as shown
     "Default01": {
