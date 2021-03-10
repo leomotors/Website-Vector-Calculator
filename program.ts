@@ -160,7 +160,7 @@ function SetDecimalPlaces() {
 // * BACKGROUND SETTINGS SECTION
 // * Dictionary for Background Settings
 var bgNameDict: object = {
-    // TODO Import from other file instead
+    // TODO Import from other file instead (.json)
     // * Key: Value sent from HTML
     // * Value: Another Dictionary of property:value
     "Default01": {
@@ -185,7 +185,7 @@ var bgNameDict: object = {
     }
 }
 
-// TODO Automatically add Selection Choice from above dictionary
+// * Add Select Options from Dictionary to HTML
 function addBgOptions() {
     let optionNode = document.getElementById("bgOptions")
     for (let background in bgNameDict) {

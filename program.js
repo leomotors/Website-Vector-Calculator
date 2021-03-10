@@ -145,7 +145,7 @@ function SetDecimalPlaces() {
 // * BACKGROUND SETTINGS SECTION
 // * Dictionary for Background Settings
 var bgNameDict = {
-    // TODO Import from other file instead
+    // TODO Import from other file instead (.json)
     // * Key: Value sent from HTML
     // * Value: Another Dictionary of property:value
     "Default01": {
@@ -169,7 +169,7 @@ var bgNameDict = {
         "filelocation": "Anime/無限城.jpg"
     }
 };
-// TODO Automatically add Selection Choice from above dictionary
+// * Add Select Options from Dictionary to HTML
 function addBgOptions() {
     var optionNode = document.getElementById("bgOptions");
     for (var background in bgNameDict) {
