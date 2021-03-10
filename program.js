@@ -168,6 +168,10 @@ var bgNameDict = {
     "Infinity Castle": {
         "displayname": "Infinity Castle",
         "filelocation": "Anime/無限城.jpg"
+    },
+    "Gradient Giphy": {
+        "displayname": "Gradient Giphy",
+        "filelocation": "GIF/Gradient_Giphy.gif"
     }
 };
 // * Add Select Options from Dictionary to HTML

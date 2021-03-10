@@ -183,6 +183,10 @@ var bgNameDict: object = {
     "Infinity Castle": {
         "displayname": "Infinity Castle",
         "filelocation": "Anime/無限城.jpg"
+    },
+    "Gradient Giphy": {
+        "displayname": "Gradient Giphy",
+        "filelocation": "GIF/Gradient_Giphy.gif"
     }
 }
 
