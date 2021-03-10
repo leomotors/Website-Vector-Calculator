@@ -6,6 +6,8 @@
 // TODO If possible add cookie.
 var decimalPlaces: number = 2
 
+// * VECTOR OPERATING & DISPLAY SECTION
+// * Vector's Class containing i,j,k field and Method
 class Vector {
     readonly i: number
     readonly j: number
@@ -155,10 +157,10 @@ function SetDecimalPlaces() {
         alert("Decimal Places must be between 0-50!")
 }
 
+// * BACKGROUND SETTINGS SECTION
 // * Dictionary for Background Settings
 var bgNameDict: object = {
     // TODO Import from other file instead
-    // TODO Automatically add Selection Choice from this dictionary
     // * Key: Value sent from HTML
     // * Value: Another Dictionary of property:value
     "Default01": {
@@ -170,7 +172,7 @@ var bgNameDict: object = {
         "filelocation": "Samsung_Galaxy/Galaxy_Tab_S7_Wallpaper_9.jpg"
     },
     "Elaina & Bubble Tea": {
-        "displayname": "Elaina & Bubb;e Tea (Cute)",
+        "displayname": "Elaina & Bubble Tea (Cute)",
         "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
     },
     "Hua Hin Sea Resort View": {
@@ -183,9 +185,21 @@ var bgNameDict: object = {
     }
 }
 
+// TODO Automatically add Selection Choice from above dictionary
+function addBgOptions() {
+    let optionNode = document.getElementById("bgOptions")
+    for (let background in bgNameDict) {
+        let bgOptionChildNode: HTMLOptionElement = document.createElement("option")
+        bgOptionChildNode.value = background
+        let displayText: Text = document.createTextNode(bgNameDict[background]["displayname"])
+        bgOptionChildNode.appendChild(displayText)
+        optionNode.appendChild(bgOptionChildNode)
+    }
+}
+
 // * Set Background
 function SetBackground() {
-    let selectBg: string = (<HTMLInputElement>document.getElementById("bgChosen")).value
+    let selectBg: string = (<HTMLInputElement>document.getElementById("bgOptions")).value
     let filelocation: string = `./assets/${bgNameDict[selectBg]["filelocation"]}`
     let bgString: string = `url(${filelocation})`
     document.getElementById("Body").style.backgroundImage = bgString
