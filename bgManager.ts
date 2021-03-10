@@ -12,7 +12,7 @@ var bgNameDict: object = {
     // ! File extension must be declared
 
     // * CATEGORY: Samsung Galaxy Wallpaper
-    "Default01": {
+    "Default01": { // * Default
         "displayname": "Default 01",
         "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
     },
