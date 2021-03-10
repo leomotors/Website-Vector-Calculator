@@ -162,7 +162,6 @@ var bgNameDict = {
         "displayname": "Hua Hin Sea Resort View",
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
     },
-    // ! This background isn't added to HTML yet.
     "Infinity Castle": {
         "displayname": "Infinity Castle",
         "filelocation": "Anime/無限城.jpg"
