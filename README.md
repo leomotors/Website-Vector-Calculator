@@ -10,6 +10,12 @@ Using HTML, CSS and JavaScript knowledge to create this website
 
 Script is developed using TypeScript
 
+## Add custom background
+
+    * Add file to assets
+
+    * Edit dictionary in TS/JS Code (if edit in TS, make sure to compile it.)
+
 ## Reference
 
 <a href = "https://github.com/Leomotors/Mini-Vector-Calculator">Mini Vector Calculator Project</a> by me!
@@ -17,5 +23,3 @@ Script is developed using TypeScript
 <hr>
 
 <h1 align="center"><b>Under Development</b></h1>
-
-Another to be fix is that markdown file is breaking many rules. 👍
