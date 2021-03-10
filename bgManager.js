@@ -10,6 +10,7 @@ var bgNameDict = {
     // * Value: Another Dictionary of property:value as shown
     // ! File extension must be declared
     // * CATEGORY: Samsung Galaxy Wallpaper
+    // * Default one below
     "Default01": {
         "displayname": "Default 01",
         "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
@@ -29,10 +30,12 @@ var bgNameDict = {
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
     },
     // * CATEGORY: Anime | アニメ
+    // * Source: 魔女の旅々
     "Elaina & Bubble Tea": {
         "displayname": "Elaina & Bubble Tea (Cute)",
         "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
     },
+    // * Source: 鬼滅の刃
     "Infinity Castle": {
         "displayname": "Infinity Castle",
         "filelocation": "Anime/無限城.jpg"

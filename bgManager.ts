@@ -12,7 +12,8 @@ var bgNameDict: object = {
     // ! File extension must be declared
 
     // * CATEGORY: Samsung Galaxy Wallpaper
-    "Default01": { // * Default
+    // * Default one below
+    "Default01": {
         "displayname": "Default 01",
         "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
     },
@@ -34,11 +35,13 @@ var bgNameDict: object = {
     },
 
     // * CATEGORY: Anime | アニメ
-    "Elaina & Bubble Tea": { // * Source: 魔女の旅々
+    // * Source: 魔女の旅々
+    "Elaina & Bubble Tea": { 
         "displayname": "Elaina & Bubble Tea (Cute)",
         "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
-    },
-    "Infinity Castle": { // * Source: 鬼滅の刃
+    }, 
+    // * Source: 鬼滅の刃
+    "Infinity Castle": {
         "displayname": "Infinity Castle",
         "filelocation": "Anime/無限城.jpg"
     },
