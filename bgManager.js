@@ -29,6 +29,10 @@ var bgNameDict = {
         "displayname": "Hua Hin Sea Resort View",
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
     },
+    // * CATEGORY: Secret
+    "Rick Roll": {
+        "displayname": "Thai Gulf's Relaxing Nature Sea View"
+    },
     // * CATEGORY: Anime | アニメ
     // * Source: 魔女の旅々
     "Elaina & Bubble Tea": {
@@ -88,6 +92,10 @@ function addBgOptions() {
 // * Set Background
 function SetBackground() {
     var selectBg = document.getElementById("bgOptions").value;
+    if (selectBg == "Rick Roll") {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        return;
+    }
     var filelocation = "./assets/" + bgNameDict[selectBg]["filelocation"];
     var bgString = "url(" + filelocation + ")";
     document.getElementById("Body").style.backgroundImage = bgString;

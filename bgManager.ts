@@ -34,12 +34,17 @@ var bgNameDict: object = {
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
     },
 
+    // * CATEGORY: Secret
+    "Rick Roll": {
+        "displayname": "Thai Gulf's Relaxing Nature Sea View"
+    },
+
     // * CATEGORY: Anime | アニメ
     // * Source: 魔女の旅々
-    "Elaina & Bubble Tea": { 
+    "Elaina & Bubble Tea": {
         "displayname": "Elaina & Bubble Tea (Cute)",
         "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
-    }, 
+    },
     // * Source: 鬼滅の刃
     "Infinity Castle": {
         "displayname": "Infinity Castle",
@@ -83,7 +88,7 @@ var bgNameDict: object = {
 
 // * Add Select Options from Dictionary to HTML
 function addBgOptions() {
-    let optionNode:HTMLElement = document.getElementById("bgOptions")
+    let optionNode: HTMLElement = document.getElementById("bgOptions")
     for (let background in bgNameDict) {
         let bgOptionChildNode: HTMLOptionElement = document.createElement("option")
         bgOptionChildNode.value = background
@@ -96,6 +101,11 @@ function addBgOptions() {
 // * Set Background
 function SetBackground() {
     let selectBg: string = (<HTMLInputElement>document.getElementById("bgOptions")).value
+    if (selectBg == "Rick Roll") {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        return
+    }
+
     let filelocation: string = `./assets/${bgNameDict[selectBg]["filelocation"]}`
     let bgString: string = `url(${filelocation})`
     document.getElementById("Body").style.backgroundImage = bgString
