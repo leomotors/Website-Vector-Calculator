@@ -83,7 +83,7 @@ var bgNameDict: object = {
 
 // * Add Select Options from Dictionary to HTML
 function addBgOptions() {
-    let optionNode = document.getElementById("bgOptions")
+    let optionNode:HTMLElement = document.getElementById("bgOptions")
     for (let background in bgNameDict) {
         let bgOptionChildNode: HTMLOptionElement = document.createElement("option")
         bgOptionChildNode.value = background
