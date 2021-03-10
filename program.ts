@@ -164,6 +164,9 @@ var bgNameDict: object = {
     // ! Unless host through server while this project want it to work locally.
     // * Key: Value of <option> in <select>
     // * Value: Another Dictionary of property:value as shown
+    // ! File extension must be declared
+
+    // * CATEGORY: Samsung Galaxy Wallpaper
     "Default01": {
         "displayname": "Default 01",
         "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
@@ -172,21 +175,61 @@ var bgNameDict: object = {
         "displayname": "Default 02",
         "filelocation": "Samsung_Galaxy/Galaxy_Tab_S7_Wallpaper_9.jpg"
     },
-    "Elaina & Bubble Tea": {
-        "displayname": "Elaina & Bubble Tea (Cute)",
-        "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
+
+    // * CATEGORY: Premium-Look Wallpaper
+    "Gradient Giphy": {
+        "displayname": "Gradient Giphy",
+        "filelocation": "GIF/Gradient_Giphy.gif"
     },
+
+    // * CATEGORY: Nature View
     "Hua Hin Sea Resort View": {
         "displayname": "Hua Hin Sea Resort View",
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
     },
-    "Infinity Castle": {
+
+    // * CATEGORY: Anime | アニメ
+    "Elaina & Bubble Tea": { // * Source: 魔女の旅々
+        "displayname": "Elaina & Bubble Tea (Cute)",
+        "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
+    },
+    "Infinity Castle": { // * Source: 鬼滅の刃
         "displayname": "Infinity Castle",
         "filelocation": "Anime/無限城.jpg"
     },
-    "Gradient Giphy": {
-        "displayname": "Gradient Giphy",
-        "filelocation": "GIF/Gradient_Giphy.gif"
+
+    // * CATEGORY: Minecraft
+    "Arendelle Castle": {
+        "displayname": "MC: Arendelle Castle",
+        "filelocation": "./Minecraft/Arendelle_Castle.jpg"
+    },
+    "Desert Village": {
+        "displayname": "MC: Desert Village",
+        "filelocation": "./Minecraft/Desert_Village.jpg"
+    },
+    "Nether Highway": {
+        "displayname": "MC: Nether Highway",
+        "filelocation": "./Minecraft/Nether_Highway_View.jpg"
+    },
+    "Ocean Village View": {
+        "displayname": "MC: Ocean Village View",
+        "filelocation": "./Minecraft/Ocean_Village_View.jpg"
+    },
+    "Rainy Day": {
+        "displayname": "MC: Rainy Day",
+        "filelocation": "./Minecraft/Rainy_Day.jpg"
+    },
+    "Snow Village": {
+        "displayname": "MC: Snow Village",
+        "filelocation": "./Minecraft/Snow_Village.jpg"
+    },
+    "Village Airview": {
+        "displayname": "MC: Village Airview",
+        "filelocation": "./Minecraft/Village_Airview.jpg"
+    },
+    "Void Ocean": {
+        "displayname": "MC: Unpleasant Ocean",
+        "filelocation": "./Minecraft/Void_Ocean.jpg"
     }
 }
 
