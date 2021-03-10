@@ -2,7 +2,25 @@
 
 Upgraded (or no?) Vector Calculator to be run on website using HTML!
 
-Current Version : **Snapshot - Under Development**
+## Development Status
+
+Version: **Alpha - Main Functionality Done**
+
+Main Function
+
+- [X] Vector Calculation
+
+- [X] Set Decimal Places
+
+Utility Function
+
+- [X] Set Background
+
+Website Styling
+
+- [ ] Make Website looks better (alignment etc.)
+
+- [ ] Add some widget and misc. (decoration)
 
 ## Development
 
