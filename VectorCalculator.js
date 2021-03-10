@@ -1,10 +1,11 @@
 /**
- * * program.(js/ts)
- * * Core Program to run this website
+ * * VectorCalculator.(js/ts)
+ * * Program that take care of Vector Input,
+ * * and do calculation, as well as display!
+ * * Can be called Core of this website?
  */
 // TODO If possible add cookie.
 var decimalPlaces = 2;
-// * VECTOR OPERATING & DISPLAY SECTION
 // * Vector's Class containing i,j,k field and Method
 var Vector = /** @class */ (function () {
     function Vector(i, j, k) {
@@ -47,7 +48,7 @@ var Vector = /** @class */ (function () {
         var k = this.i * operand.j - this.j * operand.i;
         return new Vector(i, j, k);
     };
-    // * Class Method that call other Method
+    // * Class Method that call other Method (Derived Math)
     Vector.prototype.projectOn = function (operand) {
         var projectedVectorRelSize = this.dotProduct(operand) / (operand.size() * operand.size());
         var w = operand.multiply(projectedVectorRelSize);

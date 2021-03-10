@@ -1,12 +1,13 @@
 /**
- * * program.(js/ts)
- * * Core Program to run this website
+ * * VectorCalculator.(js/ts)
+ * * Program that take care of Vector Input,
+ * * and do calculation, as well as display!
+ * * Can be called Core of this website?
  */
 
 // TODO If possible add cookie.
 var decimalPlaces: number = 2
 
-// * VECTOR OPERATING & DISPLAY SECTION
 // * Vector's Class containing i,j,k field and Method
 class Vector {
     readonly i: number
@@ -55,7 +56,7 @@ class Vector {
         return new Vector(i, j, k)
     }
 
-    // * Class Method that call other Method
+    // * Class Method that call other Method (Derived Math)
     projectOn(operand: Vector): Vector {
         let projectedVectorRelSize: number = this.dotProduct(operand) / (operand.size() * operand.size())
         let w: Vector = operand.multiply(projectedVectorRelSize)
