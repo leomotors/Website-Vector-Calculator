@@ -143,6 +143,7 @@ function SetDecimalPlaces() {
 // * Dictionary for Background Settings
 var bgNameDict = {
     // TODO Import from other file instead
+    // TODO Automatically add Selection Choice from this dictionary
     // * Key: Value sent from HTML
     // * Value: Another Dictionary of property:value
     "Default01": {
@@ -155,11 +156,16 @@ var bgNameDict = {
     },
     "Elaina & Bubble Tea": {
         "displayname": "Elaina & Bubb;e Tea (Cute)",
-        "filelocation": "イレイナとชานมไข่มุก.jpg"
+        "filelocation": "Anime/イレイナとชานมไข่มุก.jpg"
     },
     "Hua Hin Sea Resort View": {
         "displayname": "Hua Hin Sea Resort View",
         "filelocation": "HuaHin_Luxury_Resort_View.jpg"
+    },
+    // ! This background isn't added to HTML yet.
+    "Infinity Castle": {
+        "displayname": "Infinity Castle",
+        "filelocation": "Anime/無限城.jpg"
     }
 };
 // * Set Background
