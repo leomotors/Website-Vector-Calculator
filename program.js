@@ -146,8 +146,8 @@ function SetDecimalPlaces() {
 // * Dictionary for Background Settings
 var bgNameDict = {
     // TODO Import from other file instead (.json)
-    // * Key: Value sent from HTML
-    // * Value: Another Dictionary of property:value
+    // * Key: Value of <option> in <select>
+    // * Value: Another Dictionary of property:value as shown
     "Default01": {
         "displayname": "Default 01",
         "filelocation": "Samsung_Galaxy/Note_10_Wallpaper_Silver.jpg"
