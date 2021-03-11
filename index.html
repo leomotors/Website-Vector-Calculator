@@ -1,6 +1,5 @@
 <!-- * Vector Calculator (Web Version)
      * Made by @Leomotors
-     TODO Make Multiply Function usable
      TODO Cleanup website
 *-->
 
@@ -22,9 +21,9 @@
         Vector Calculator
     </h1>
     <hr>
-    <h3>
-        Main Vector:
-    </h3>
+
+    <!--* One Vector Operation Zone-->
+    <h3>Main Vector:</h3>
     <label for="vector-i"></label>
     <input id="vector-i" class="VectorInput" type="number" />
     <label for="vector-j"></label>
@@ -37,6 +36,8 @@
     <button onclick="Operation(1)">Calculate Size</button> <br>
     <button onclick="Operation(2)">Multiply Size</button> <br>
     <p id="ResultTxt01" class="ResultTxt"></p>
+
+    <!--* Two Vector Operation Zone-->
     <h2>Two Vector Operation</h2>
     <h3>Operand Vector: </h3>
     <label for="operand-i"></label>
@@ -54,7 +55,10 @@
     <button onclick="Operation(7)">Project Vector on another</button> <br>
     <button onclick="Operation(8)">Parallelogram area</button> <br>
     <p id="ResultTxt02" class="ResultTxt"></p>
-    <br><br>
+
+    <!--* Settings Zone-->
+    <h3>Settings</h3>
+
     <div id="DecimalPlacesSettings">
         <label for="DecimalPlacesInput">
             Decimal Places:
