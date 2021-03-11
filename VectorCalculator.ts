@@ -148,6 +148,7 @@ function Operation(choice: number): void {
     targetNode.innerHTML = ResultTxt
 
     // * Add Clear Output Button
+    targetNode.appendChild(document.createElement("br"))
     let clearButton: HTMLButtonElement = document.createElement("button")
     clearButton.addEventListener("click", clearOutput)
     clearButton.id = "ClearResultButton"

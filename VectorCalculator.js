@@ -133,6 +133,7 @@ function Operation(choice) {
         targetNode = document.getElementById("ResultTxt02");
     targetNode.innerHTML = ResultTxt;
     // * Add Clear Output Button
+    targetNode.appendChild(document.createElement("br"));
     var clearButton = document.createElement("button");
     clearButton.addEventListener("click", clearOutput);
     clearButton.id = "ClearResultButton";
