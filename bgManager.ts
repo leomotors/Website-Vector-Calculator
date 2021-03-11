@@ -10,7 +10,8 @@ var bgNameDict: object = {
     // * Key: Value of <option> in <select>
     // * Value: Another Dictionary of property:value as shown
     // ! File extension must be declared
-
+    // * filelocation: Compared to ./assets/Background
+    
     // * CATEGORY: Samsung Galaxy Wallpaper
     // * Default one below
     "Default01": {
@@ -31,7 +32,7 @@ var bgNameDict: object = {
     // * CATEGORY: Nature View
     "Hua Hin Sea Resort View": {
         "displayname": "Hua Hin Sea Resort View",
-        "filelocation": "HuaHin_Luxury_Resort_View.jpg"
+        "filelocation": "Nature_View/HuaHin_Luxury_Resort_View.jpg"
     },
 
     // * CATEGORY: Secret
@@ -54,35 +55,35 @@ var bgNameDict: object = {
     // * CATEGORY: Minecraft
     "Arendelle Castle": {
         "displayname": "MC: Arendelle Castle",
-        "filelocation": "./Minecraft/Arendelle_Castle.jpg"
+        "filelocation": "Minecraft/Arendelle_Castle.jpg"
     },
     "Desert Village": {
         "displayname": "MC: Desert Village",
-        "filelocation": "./Minecraft/Desert_Village.jpg"
+        "filelocation": "Minecraft/Desert_Village.jpg"
     },
     "Nether Highway": {
         "displayname": "MC: Nether Highway",
-        "filelocation": "./Minecraft/Nether_Highway_View.jpg"
+        "filelocation": "Minecraft/Nether_Highway_View.jpg"
     },
     "Ocean Village View": {
         "displayname": "MC: Ocean Village View",
-        "filelocation": "./Minecraft/Ocean_Village_View.jpg"
+        "filelocation": "Minecraft/Ocean_Village_View.jpg"
     },
     "Rainy Day": {
         "displayname": "MC: Rainy Day",
-        "filelocation": "./Minecraft/Rainy_Day.jpg"
+        "filelocation": "Minecraft/Rainy_Day.jpg"
     },
     "Snow Village": {
         "displayname": "MC: Snow Village",
-        "filelocation": "./Minecraft/Snow_Village.jpg"
+        "filelocation": "Minecraft/Snow_Village.jpg"
     },
     "Village Airview": {
         "displayname": "MC: Village Airview",
-        "filelocation": "./Minecraft/Village_Airview.jpg"
+        "filelocation": "Minecraft/Village_Airview.jpg"
     },
     "Void Ocean": {
         "displayname": "MC: Unpleasant Ocean",
-        "filelocation": "./Minecraft/Void_Ocean.jpg"
+        "filelocation": "Minecraft/Void_Ocean.jpg"
     }
 }
 
@@ -106,7 +107,7 @@ function SetBackground() {
         return
     }
 
-    let filelocation: string = `./assets/${bgNameDict[selectBg]["filelocation"]}`
+    let filelocation: string = `./assets/Background/${bgNameDict[selectBg]["filelocation"]}`
     let bgString: string = `url(${filelocation})`
     document.getElementById("Body").style.backgroundImage = bgString
     console.log(`Set background to ${filelocation}`)
