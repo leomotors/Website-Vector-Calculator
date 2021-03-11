@@ -30,7 +30,7 @@ Script is developed using TypeScript
 
 ## Add custom background
 
-    * Add file to assets
+    * Add file to assets/Background
 
     * Edit dictionary in TS/JS Code (if edit in TS, make sure to compile it.)
 
