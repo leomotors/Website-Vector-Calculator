@@ -122,16 +122,35 @@ function Operation(choice) {
             ResultTxt = "Unknown Choice, is invalid or not implemented.";
     }
     // * Clean Output
+    clearOutput();
+    // * Show Output
+    var targetNode;
+    if (choice <= 2)
+        // * One Vector Operation (Display Above)
+        targetNode = document.getElementById("ResultTxt01");
+    else
+        // * Two Vector Operation (Display Below)
+        targetNode = document.getElementById("ResultTxt02");
+    targetNode.innerHTML = ResultTxt;
+    // * Add Clear Output Button
+    var clearButton = document.createElement("button");
+    clearButton.addEventListener("click", clearOutput);
+    clearButton.id = "ClearResultButton";
+    targetNode.appendChild(clearButton);
+    var clearText = document.createTextNode("Clear Output");
+    clearButton.appendChild(clearText);
+}
+function clearOutput() {
+    // * Clean Output
     var ResultClass = document.getElementsByClassName("ResultTxt");
-    for (var _i = 0, ResultClass_1 = ResultClass; _i < ResultClass_1.length; _i++) {
-        var element = ResultClass_1[_i];
+    for (var _i = 0, _a = ResultClass; _i < _a.length; _i++) {
+        var element = _a[_i];
         element.innerHTML = "";
     }
-    // * Show Output
-    if (choice <= 2)
-        document.getElementById("ResultTxt01").innerHTML = ResultTxt;
-    else
-        document.getElementById("ResultTxt02").innerHTML = ResultTxt;
+    // * Remove Clear Button if it exists
+    var clearButton = document.getElementById("ClearButton");
+    if (clearButton != null)
+        clearButton.parentNode.removeChild(clearButton);
 }
 // * Set Display Decimal Places
 function SetDecimalPlaces() {

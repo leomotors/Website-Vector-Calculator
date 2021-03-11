@@ -135,16 +135,38 @@ function Operation(choice: number): void {
     }
 
     // * Clean Output
-    let ResultClass: any = document.getElementsByClassName("ResultTxt")
-    for (let element of ResultClass) {
-        element.innerHTML = ""
-    }
+    clearOutput()
 
     // * Show Output
+    let targetNode: HTMLElement
     if (choice <= 2)
-        document.getElementById("ResultTxt01").innerHTML = ResultTxt
+        // * One Vector Operation (Display Above)
+        targetNode = document.getElementById("ResultTxt01")
     else
-        document.getElementById("ResultTxt02").innerHTML = ResultTxt
+        // * Two Vector Operation (Display Below)
+        targetNode = document.getElementById("ResultTxt02")
+    targetNode.innerHTML = ResultTxt
+
+    // * Add Clear Output Button
+    let clearButton: HTMLButtonElement = document.createElement("button")
+    clearButton.addEventListener("click", clearOutput)
+    clearButton.id = "ClearResultButton"
+    targetNode.appendChild(clearButton)
+
+    let clearText: Text = document.createTextNode("Clear Output")
+    clearButton.appendChild(clearText)
+}
+
+function clearOutput() {
+    // * Clean Output
+    let ResultClass: HTMLCollectionOf<Element> = document.getElementsByClassName("ResultTxt")
+    for (let element of <any>ResultClass) {
+        element.innerHTML = ""
+    }
+    // * Remove Clear Button if it exists
+    let clearButton: HTMLElement = document.getElementById("ClearButton")
+    if (clearButton != null)
+        clearButton.parentNode.removeChild(clearButton)
 }
 
 // * Set Display Decimal Places
