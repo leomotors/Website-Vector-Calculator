@@ -103,7 +103,7 @@ function Operation(choice: number): void {
         case 1: ResultTxt = `Result is ${inputVector(1).size().toFixed(decimalPlaces)} unit(s).`
             break
         case 2:
-            let multiplicand: number = parseInt(prompt("Please enter Multiplicand"))
+            let multiplicand: number = parseFloat(prompt("Please enter Multiplicand"))
             ResultTxt = `Result is ${inputVector(1).multiply(multiplicand).formattedPrint()}`
             break
 

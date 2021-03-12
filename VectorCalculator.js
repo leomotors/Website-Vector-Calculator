@@ -92,7 +92,7 @@ function Operation(choice) {
             ResultTxt = "Result is " + inputVector(1).size().toFixed(decimalPlaces) + " unit(s).";
             break;
         case 2:
-            var multiplicand = parseInt(prompt("Please enter Multiplicand"));
+            var multiplicand = parseFloat(prompt("Please enter Multiplicand"));
             ResultTxt = "Result is " + inputVector(1).multiply(multiplicand).formattedPrint();
             break;
         // * Two Vector Operation
