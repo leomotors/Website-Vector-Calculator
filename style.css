@@ -1,4 +1,4 @@
-#logo{
+#logo {
     align-self:"center";
     color:darkgoldenrod;
 }
@@ -22,7 +22,11 @@ body {
     width: 350px; */
 }
 
-.ResultTxt{
+.ResultTxt {
     font-size: 200%;
     font-weight: 600;
+}
+
+button {
+    font-family: "System Font","PrintAble4U",;
 }
