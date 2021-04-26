@@ -17,12 +17,12 @@
     <script src="VectorCalculator.js"></script>
     <div id="logo">VecCalcLogo (please pretend it is)</div>
     <h1 id="ProgramTitle">
-        Vector Calculator
+        <span> Vector Calculator </span>
     </h1>
     <hr>
 
     <!--* One Vector Operation Zone-->
-    <h3>Main Vector:</h3>
+    <h3><span> Main Vector: </span></h3>
     <label for="vector-i"></label>
     <input id="vector-i" class="VectorInput" type="number" />
     <label for="vector-j"></label>
@@ -31,14 +31,14 @@
     <input id="vector-k" class="VectorInput" type="number" />
     <br><br>
 
-    <h2>One Vector Operation</h2>
+    <h2><span> One Vector Operation </span></h2>
     <button onclick="Operation(1)">Calculate Size</button> <br>
     <button onclick="Operation(2)">Multiply Size</button> <br>
     <p id="ResultTxt01" class="ResultTxt"></p>
 
     <!--* Two Vector Operation Zone-->
-    <h2>Two Vector Operation</h2>
-    <h3>Operand Vector: </h3>
+    <h2><span> Two Vector Operation </span></h2>
+    <h3><span> Operand Vector: </span></h3>
     <label for="operand-i"></label>
     <input id="operand-i" class="VectorInput" type="number" />
     <label for="operand-j"></label>
@@ -56,11 +56,11 @@
     <p id="ResultTxt02" class="ResultTxt"></p>
 
     <!--* Settings Zone-->
-    <h3>Settings</h3>
+    <h3><span> Settings </span></h3>
 
     <div id="DecimalPlacesSettings">
         <label for="DecimalPlacesInput">
-            Decimal Places:
+            <span> Decimal Places: </span>
         </label>
         <input type="number" id="DecimalPlacesInput" min=0 max=50>
         <button onclick="SetDecimalPlaces()">Set</button>
@@ -68,7 +68,7 @@
     <br>
     <!--TODO Add more background-->
     <script src="bgManager.js"></script>
-    <label for="bgOptions">Choose a background: </label>
+    <label for="bgOptions"><span> Choose a background: </span></label>
     <select name="bgSelect" id="bgOptions" onchange="SetBackground()">
     </select>
 </body>
