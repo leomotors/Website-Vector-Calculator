@@ -4,7 +4,7 @@ Upgraded (or no?) Vector Calculator to be run on website using HTML!
 
 ## Development Status
 
-Version: **Alpha - Main Functionality Done**
+Version: **Abandoned - Main Functionality is done but I don't know CSS**
 
 Main Function
 
