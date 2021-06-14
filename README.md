@@ -4,7 +4,7 @@ Upgraded (or no?) Vector Calculator to be run on website using HTML!
 
 ## Development Status
 
-Version: **Abandoned - Main Functionality is done but I don't know CSS**
+Status: **Abandoned - Main Functionality is done but I don't know CSS**
 
 Main Function
 
@@ -37,7 +37,3 @@ Script is developed using TypeScript
 ## Reference
 
 <a href = "https://github.com/Leomotors/Mini-Vector-Calculator">Mini Vector Calculator Project</a> by me!
-
-<hr>
-
-<h1 align="center"><b>Under Development</b></h1>
